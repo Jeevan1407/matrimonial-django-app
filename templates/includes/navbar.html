@@ -11,15 +11,15 @@
 				<li class="green">
 					<a href="#" class="icon-home"></a>
 					<ul>
-						<li><a href="login.html">Login</a></li>
-					    <li><a href="register.html">Register</a></li>
-					    <li><a href="index.html">Logout</a></li>
+						<li><a href="{% url 'users:user-login' %}">Login</a></li>
+					    <li><a href="{% url 'users:user-register' %}">Register</a></li>
+					    <li><a href="{% url 'users:user-logout' %}">Logout</a></li>
 					</ul>
 				</li>
 			   </ul>
              </nav>
            </div>
-           <a class="brand" href="index.html"><img src="{% static 'images/logo.png' %}" alt="logo"></a>
+           <a class="brand" href="{% url 'common:index' %}"><img src="{% static 'images/logo.png' %}" alt="logo"></a>
            <div class="pull-right">
           	<nav class="navbar nav_bottom" role="navigation">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -35,8 +35,8 @@
 		   <!-- Collect the nav links, forms, and other content for toggling -->
 		    <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
 		        <ul class="nav navbar-nav nav_1">
-		            <li><a href="index.html">Home</a></li>
-		            <li><a href="about.html">About</a></li>
+		            <li><a href="{% url 'common:index' %}">Home</a></li>
+		            <li><a href="{% url 'common:about' %}">About</a></li>
 		    		<li class="dropdown">
 		              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Matches<span class="caret"></span></a>
 		              <ul class="dropdown-menu" role="menu">
@@ -67,7 +67,7 @@
 		                <li><a href="upgrade.html">Upgrade</a></li>
 		              </ul>
 		            </li>
-		            <li class="last"><a href="contact.html">Contacts</a></li>
+		            <li class="last"><a href="{% url 'common:contact' %}">Contacts</a></li>
 		        </ul>
 		     </div><!-- /.navbar-collapse -->
 		    </nav>
