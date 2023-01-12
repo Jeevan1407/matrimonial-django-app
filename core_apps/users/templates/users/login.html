@@ -15,7 +15,7 @@
    </div>
    <div class="services">
    	  <div class="col-sm-6 login_left">
-	   <form>
+	   <form action={% url 'users:user-login'%} method="POST">
   	    <div class="form-item form-type-textfield form-item-name">
 	      <label for="edit-name">Email <span class="form-required" title="This field is required.">*</span></label>
 	      <input type="text" id="edit-name" name="email" value="" size="60" maxlength="60" class="form-text required">

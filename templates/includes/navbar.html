@@ -68,6 +68,9 @@
 		              </ul>
 		            </li>
 		            <li class="last"><a href="{% url 'common:contact' %}">Contacts</a></li>
+					{% if request.user.is_authenticated %}
+						<li class="last"><a href="{% url 'common:contact' %}"> {{ request.user.email }} </a></li>
+					{% endif %}
 		        </ul>
 		     </div><!-- /.navbar-collapse -->
 		    </nav>

@@ -25,10 +25,20 @@ class UserCreationForm(admin_forms.UserCreationForm):
 
 # user forms
 
-class RegistrationForm(admin_forms.UserCreationForm):
+class RegistrationForm(forms.ModelForm):
 
     email = forms.EmailField(max_length=255, help_text="Required. Add valid email address.")
-
+    gender = forms.CharField(max_length=128)
     class Meta:
         model = User
-        fields = ('email',)
+        fields = ['first_name', 'last_name', 'username', 'email', 'password', 'gender']
+
+    # def clean(self):
+    #     cleaned_data = super(RegistrationForm, self).clean()
+    #     password = cleaned_data.get('password1')
+    #     confirm_password = cleaned_data.get('confirm_password')
+
+    #     if password != confirm_password:
+    #         raise forms.ValidationError(
+    #             "Password does not match!"
+    #         )
